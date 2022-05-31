@@ -21,9 +21,9 @@ trainset = torchvision.datasets.CIFAR10(root='./data', train=False,
 
 dataset = torch.utils.data.DataLoader(trainset, batch_size=1,
                                         shuffle=False, num_workers=0, drop_last=True)
-#A = trainset.class_to_idx
-#B= trainset.targets
-#print('A: ',A)
+A = trainset.class_to_idx
+B= trainset.targets
+print('A: ',A)
 #print(B)
 dataset_size = len(dataset)
 print('#test images = %d' % dataset_size)
@@ -35,7 +35,6 @@ model.setup(opt)               # regular setup: load and print networks; create 
 model.eval()
 
 PSNR_list = []
-SSIM_list = []
 N_channel_list = []
 count_list = [[]]*10
 PSNR_class_list = [[]]*10
@@ -84,5 +83,3 @@ print(f'Mean Channel: {np.mean(N_channel_list):.3f}')
 print('Mean CPP_channel: ', CPP_channel)
 print('Mean CPP_Gtilde: ', CPP_Gtilde)
 print('Mean selectable features:', Features)
-print(f"Counts: {*counts,}")
-print(f"PSNRs: {*PSNRs,}")
