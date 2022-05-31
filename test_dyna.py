@@ -78,7 +78,6 @@ CPP_channel = np.mean(N_channel_list)/16
 CPP_Gtilde = np.mean(N_channel_list)*128/(2*32*32)
 Features = np.mean(N_channel_list)-4
 print(f'Mean PSNR: {np.mean(PSNR_list):.3f}')
-print(f'Mean SSIM: {np.mean(SSIM_list):.3f}')
 print(f'Mean Channel: {np.mean(N_channel_list):.3f}')
 print('Mean CPP_channel: ', CPP_channel)
 print('Mean CPP_Gtilde: ', CPP_Gtilde)
